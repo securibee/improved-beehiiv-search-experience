@@ -31,7 +31,9 @@ take_action() {
 	echo "1. Edit"
 	echo "2. Open"
 	echo "3. Copy"
-	read -r action
+
+	# Only require input instead of requiring extra "Enter" action
+	read -n 1 -r action
 
 	case "$action" in
 	1)
