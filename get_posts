@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Set the base URL
+BASE_URL="https://api.beehiiv.com/v2/publications/$BEEHIIV_PUB_ID/posts"
+
+# Set the initial page number
+PAGE=1
+
+# Set the number of results per page
+LIMIT=100
+
+# Initialize an empty variable to store all results
+ALL_RESULTS=""
+
+# Get the total number of results
+TOTAL_RESULTS=$(curl --silent --request GET --url "$BASE_URL?limit=1" --header 'Accept: application/json' --header "Authorization: $BEEHIIV_API_KEY" | jq '.total_results')
+
+# Calculate the total number of pages
+TOTAL_PAGES=$((($TOTAL_RESULTS + $LIMIT - 1) / $LIMIT))
+
+# Loop over all pages
+while [ $PAGE -le $TOTAL_PAGES ]; do
+	# Fetch the results for the current page
+	RESPONSE=$(curl --silent --request GET --url "$BASE_URL?page=$PAGE&limit=$LIMIT" --header 'Accept: application/json' --header "Authorization: $BEEHIIV_API_KEY")
+
+	# Append the response to the ALL_RESULTS variable
+	ALL_RESULTS+="$RESPONSE"
+
+	# Increment the page number
+	PAGE=$((PAGE + 1))
+done
+
+# Print all the results
+echo "$ALL_RESULTS"
