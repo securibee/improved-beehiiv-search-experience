@@ -3,23 +3,18 @@
 # Function to fuzzy search and extract fields
 fuzzy_search() {
 	json_file="$1"
-	selected_item=$(jq -r '.data[] | [.id, .title, .web_url] | join(" @ ")' "$json_file" | fzf)
+	selected_item=$(jq -r '.data[] | [.id, .title, .web_url] | @tsv' "$json_file" | fzf --delimiter='\t' --with-nth=2)
 	if [ -n "$selected_item" ]; then
-		IFS='@' read -r id title web_url <<<"$selected_item"
+		IFS=$'\t' read -r id title web_url <<<"$selected_item"
 	else
 		echo "No item selected."
 		return 1
 	fi
 
-	id="${id#post_}"
-	title="${title# }"
-	web_url="${web_url# }"
-
-	echo "$selected_item"
-
-	echo "$id"
-	echo "$title"
-	echo "$web_url"
+	id="${id##post_}"       # Remove "post_" prefix from id
+	id="${id%% *}"          # Remove any trailing whitespace from id
+	title="${title#* }"     # Remove leading whitespace from title
+	web_url="${web_url#* }" # Remove leading whitespace from web_url
 }
 
 # Function to prompt for action and execute it
