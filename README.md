@@ -11,7 +11,7 @@ These two Bash scripts interact with the Beehiiv API to fetch and manage posts.
 
 ## Setup
 
-1. Set the following environment variables with your Beehiiv API credentials:
+Set the following environment variables with your Beehiiv API credentials:
    - `BEEHIIV_PUB_ID`: Your Beehiiv publication ID
    - `BEEHIIV_API_KEY`: Your Beehiiv API key
 
