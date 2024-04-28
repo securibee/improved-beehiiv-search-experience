@@ -2,7 +2,7 @@
 
 These two Bash scripts allow you to easily fetch and manage Beehiiv posts.
 
-[![Improved Beehiiv Search Experience](https://img.youtube.com/vi/EFrxjfMy72o/0.jpg)](https://www.youtube.com/watch?v=EFrxjfMy72o)
+![exp-beehiiv-search2](https://github.com/securibee/improved-beehiiv-search-experience/assets/51520913/a9fa88d2-c9ac-491d-99c7-eed84e026c5b)
 
 ## Requirements
 
