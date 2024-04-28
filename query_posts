@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if ! [ -f posts.json ]; then
+	echo "posts.json does not exist."
+fi
+
 # Function to fuzzy search and extract fields
 fuzzy_search() {
 	json_file="$1"
@@ -52,5 +56,5 @@ if ! command -v jq &>/dev/null; then
 	exit 1
 fi
 
-fuzzy_search "$1"
+fuzzy_search posts.json
 take_action
