@@ -36,7 +36,7 @@ This script allows you to fuzzy search, select, and perform actions on the posts
 ### Usage
 
 ```bash
-./open_post.sh
+./manage_posts.sh
 ```
 
 The script will present a fuzzy search interface using `fzf`. You can search for a post by its title, and select it by pressing Enter.
