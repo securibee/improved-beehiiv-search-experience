@@ -1,6 +1,8 @@
-# Beehiiv Post Fetcher and Manager
+# Improved Beehiiv Search Experience
 
-These two Bash scripts interact with the Beehiiv API to fetch and manage posts.
+These two Bash scripts allow you to easily fetch and manage Beehiiv posts.
+
+[![Improved Beehiiv Search Experience](https://img.youtube.com/vi/EFrxjfMy72o/0.jpg)](https://www.youtube.com/watch?v=EFrxjfMy72o)
 
 ## Requirements
 
