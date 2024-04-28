@@ -47,10 +47,9 @@ Once a post is selected, you will be prompted to choose an action:
 2. **Open**: Opens the post's public URL in your default browser.
 3. **Copy**: Copies the post's public URL to your clipboard.
 
+Note: The `fetch_posts.sh` script should be run first to generate the `posts.json` file required by `manage_posts.sh`.
+
 ## Notes
 
-- Make sure that `jq` and `fzf` are installed on your system. You can install them using your system's package manager (e.g., `brew install jq fzf` on macOS).
-- The `fetch_posts.sh` script should be run first to generate the `posts.json` file required by `manage_posts.sh`.
-- The scripts assume that you have set the `BEEHIIV_PUB_ID` and `BEEHIIV_API_KEY` environment variables with your Beehiiv credentials.
 - The `open` command is used to open URLs in the default browser. On macOS, this command is built-in. On other systems, you may need to substitute it with the appropriate command for opening URLs.
 - The `pbcopy` command is used to copy text to the clipboard on macOS. On other systems, you may need to substitute it with the appropriate command for copying to the clipboard.
